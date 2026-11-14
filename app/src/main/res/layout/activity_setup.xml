@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ink"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="28dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="28dp"
+            android:paddingBottom="24dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="-10dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back"
+                android:src="@drawable/ic_back" />
+
+            <ImageView
+                android:id="@+id/mark"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="28dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_mark_small" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/plex_semibold"
+                android:lineSpacingMultiplier="1.1"
+                android:text="Connect Bayan\nto Azure Speech"
+                android:textColor="@color/paper"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:lineSpacingMultiplier="1.35"
+                android:text="Bayan hears and translates through your Azure Speech resource. Open it in the Azure portal, go to Keys and Endpoint, and copy KEY 1."
+                android:textColor="@color/mist"
+                android:textSize="15sp" />
+
+            <!-- Connection -->
+            <TextView style="@style/Bayan.Label" android:layout_marginTop="36dp" android:text="Key" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <EditText
+                    android:id="@+id/inputKey"
+                    style="@style/Bayan.Field"
+                    android:hint="Paste KEY 1"
+                    android:inputType="textPassword"
+                    android:paddingEnd="72dp" />
+
+                <TextView
+                    android:id="@+id/btnReveal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_gravity="end"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:fontFamily="@font/plex_medium"
+                    android:gravity="center"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="18dp"
+                    android:text="Show"
+                    android:textColor="@color/sand"
+                    android:textSize="14sp" />
+            </FrameLayout>
+
+            <TextView style="@style/Bayan.Label" android:layout_marginTop="28dp" android:text="Region" />
+            <TextView style="@style/Bayan.Hint" android:text="Shown as Location on the same Azure page." />
+
+            <LinearLayout
+                android:id="@+id/regionChips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal" />
+
+            <EditText
+                android:id="@+id/inputRegion"
+                style="@style/Bayan.Field"
+                android:layout_marginTop="12dp"
+                android:hint="Another region, e.g. eastus"
+                android:inputType="text" />
+
+            <!-- Hearing -->
+            <LinearLayout
+                android:id="@+id/hearing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="36dp"
+                    android:background="@color/line" />
+
+                <TextView style="@style/Bayan.Label" android:layout_marginTop="28dp" android:text="Your English accent" />
+                <TextView style="@style/Bayan.Hint" android:text="Matching the accent most English in the room has helps Bayan hear words correctly." />
+
+                <LinearLayout
+                    android:id="@+id/accentChips"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal" />
+
+                <TextView style="@style/Bayan.Label" android:layout_marginTop="28dp" android:text="Names and terms" />
+                <TextView style="@style/Bayan.Hint" android:text="One per line. People, companies, places and jargon you expect to hear. Bayan will favour these spellings." />
+
+                <EditText
+                    android:id="@+id/inputVocab"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/field_bg"
+                    android:fontFamily="@font/plex_regular"
+                    android:gravity="top|start"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine|textNoSuggestions"
+                    android:lineSpacingMultiplier="1.3"
+                    android:padding="16dp"
+                    android:scrollbars="vertical"
+                    android:textColor="@color/paper"
+                    android:textCursorDrawable="@null"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="36dp"
+                    android:background="@color/line" />
+
+                <TextView style="@style/Bayan.Label" android:layout_marginTop="28dp" android:text="Text size" />
+                <TextView style="@style/Bayan.Hint" android:text="Large is easier to read with the phone flat on the table." />
+
+                <LinearLayout
+                    android:id="@+id/sizeChips"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="28dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="28dp"
+        android:paddingBottom="24dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:backgroundTint="@color/sand"
+            android:fontFamily="@font/plex_semibold"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:letterSpacing="0"
+            android:text="Save and continue"
+            android:textAllCaps="false"
+            android:textColor="@color/ink"
+            android:textSize="16sp"
+            app:cornerRadius="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="Your key is stored only on this phone."
+            android:textColor="@color/mist"
+            android:textSize="12sp" />
+    </LinearLayout>
+</LinearLayout>

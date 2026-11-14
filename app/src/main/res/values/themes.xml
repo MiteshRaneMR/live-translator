@@ -1,0 +1,28 @@
+<resources>
+    <!-- Riyadh after dark: deep ink, desert sand. -->
+    <color name="ink">#161A2E</color>
+    <color name="dusk">#1F2440</color>
+    <color name="line">#2C3254</color>
+    <color name="mist">#8F95AE</color>
+    <color name="paper">#ECEEF4</color>
+    <color name="sand">#D8B26A</color>
+    <color name="sand_dim">#33D8B26A</color>
+    <color name="ember">#E5826B</color>
+
+    <style name="Theme.Bayan" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/sand</item>
+        <item name="colorPrimaryVariant">@color/sand</item>
+        <item name="colorOnPrimary">@color/ink</item>
+        <item name="colorAccent">@color/sand</item>
+        <item name="colorControlActivated">@color/sand</item>
+        <item name="colorControlNormal">@color/mist</item>
+        <item name="android:textColorPrimary">@color/paper</item>
+        <item name="android:textColorHint">@color/mist</item>
+        <item name="android:fontFamily">@font/plex_regular</item>
+        <item name="fontFamily">@font/plex_regular</item>
+        <item name="android:windowBackground">@color/ink</item>
+        <item name="android:statusBarColor">@color/ink</item>
+        <item name="android:navigationBarColor">@color/ink</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>
